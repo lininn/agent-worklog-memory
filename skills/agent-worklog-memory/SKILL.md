@@ -17,6 +17,7 @@ After completing any code/config/docs/tests/style/OpenSpec change:
 2. Determine branch: `git branch --show-current`; detached HEAD becomes `detached:<short-sha>`; outside Git is `无 Git 仓库`.
 3. Append to `$AI_MEMORY_HOME/projects/<project>/worklog/YYYY-MM.md`.
 4. Include type, project, branch, actor, related item, reason, changes, files, verification, and risks.
+5. Keep it short: title under 80 characters; reason/changes/verification/risks are 1-3 bullets each; each bullet should state one fact and stay near 120 characters. Put long rationale in decisions or OpenSpec and link it from related item.
 
 Prefer the bundled script:
 
@@ -48,4 +49,3 @@ For branch-specific questions, filter by `分支：` first.
 - Do not store secrets, tokens, passwords, private customer data, or sensitive personal data.
 - Do not rewrite old entries except to fix formatting or remove sensitive data.
 - Do not read all historical logs at task start.
-

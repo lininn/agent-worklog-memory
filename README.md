@@ -68,6 +68,14 @@ Every entry must include the current branch:
 
 ## Worklog Format
 
+Keep entries concise and scannable:
+
+- Title: one line, ideally under 80 characters.
+- `原因`, `修改`, `验证`, `风险`: 1-3 bullets each.
+- Each bullet: one concrete fact, ideally under 120 characters.
+- `影响文件`: list key files or directories only; avoid dumping a full diff.
+- Long background, tradeoffs, or architectural rationale belongs in `decisions/` or OpenSpec, then link it from `关联`.
+
 ```md
 ## YYYY-MM-DD HH:mm - Short title
 
@@ -78,10 +86,10 @@ Every entry must include the current branch:
 关联：OpenSpec change id / Git commit / Issue / user request, or empty
 
 原因：
-- Why this work was needed.
+- One concise reason.
 
 修改：
-- What changed.
+- One concise change summary.
 
 影响文件：
 - path/to/file
@@ -136,4 +144,3 @@ For branch-specific questions, filter by the `分支：` field first.
 The repository ignores `projects/` by default. Share the protocol, adapters, scripts, templates, and skill; keep personal worklogs local unless your team explicitly chooses to version them.
 
 Do not record secrets, tokens, passwords, private customer data, or sensitive personal data.
-

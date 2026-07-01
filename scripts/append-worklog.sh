@@ -28,6 +28,9 @@ Options:
 Environment:
   AI_MEMORY_HOME     Default: ~/ai-memory
   AI_MEMORY_ACTOR    Default actor when --actor is omitted.
+
+Style:
+  Keep title under 80 characters. Keep reason, changes, verification, and risks to 1-3 short lines.
 EOF
 }
 
@@ -63,6 +66,31 @@ if [ "${#required[@]}" -gt 0 ]; then
   usage >&2
   exit 2
 fi
+
+warn_style() {
+  local label="$1"
+  local text="$2"
+  local max_lines="$3"
+  local lines
+  lines="$(printf '%s\n' "$text" | sed '/^$/d' | wc -l | tr -d ' ')"
+  if [ "$lines" -gt "$max_lines" ]; then
+    echo "Warning: $label has $lines lines; recommended maximum is $max_lines." >&2
+  fi
+  while IFS= read -r line; do
+    if [ "${#line}" -gt 120 ]; then
+      echo "Warning: $label contains a line over 120 characters." >&2
+      break
+    fi
+  done <<< "$text"
+}
+
+if [ "${#TITLE}" -gt 80 ]; then
+  echo "Warning: title is over 80 characters." >&2
+fi
+warn_style "reason" "$REASON" 3
+warn_style "changes" "$CHANGES" 3
+warn_style "verification" "$VERIFICATION" 3
+warn_style "risks" "$RISKS" 3
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 [ -n "$PROJECT" ] || PROJECT="$("$script_dir/current-project.sh")"
@@ -105,4 +133,3 @@ format_lines() {
 } >> "$target"
 
 echo "$target"
-
