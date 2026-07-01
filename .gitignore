@@ -1,0 +1,8 @@
+# Personal/project-specific memory data is local by default.
+/projects/
+
+# OS/editor noise.
+.DS_Store
+*.swp
+*.swo
+
