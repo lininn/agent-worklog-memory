@@ -55,7 +55,7 @@ Use `AI_MEMORY_HOME` to install from a non-default location.
 Agents append worklogs to:
 
 ```text
-~/ai-memory/projects/<project-name>/worklog/YYYY-MM.md
+~/ai-memory/projects/<project-name>/worklog/YYYY-MM-DD.md
 ```
 
 Project name defaults to the Git repository root directory name. Outside Git, it uses the current working directory name.

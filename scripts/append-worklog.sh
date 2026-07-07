@@ -96,13 +96,13 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 [ -n "$PROJECT" ] || PROJECT="$("$script_dir/current-project.sh")"
 [ -n "$BRANCH" ] || BRANCH="$("$script_dir/current-branch.sh")"
 
-month="$(date '+%Y-%m')"
+day="$(date '+%Y-%m-%d')"
 timestamp="$(date '+%Y-%m-%d %H:%M')"
-target="$AI_MEMORY_HOME/projects/$PROJECT/worklog/$month.md"
+target="$AI_MEMORY_HOME/projects/$PROJECT/worklog/$day.md"
 mkdir -p "$(dirname "$target")"
 
 if [ ! -f "$target" ]; then
-  printf '# %s Worklog - %s\n\n' "$PROJECT" "$month" > "$target"
+  printf '# %s Worklog - %s\n\n' "$PROJECT" "$day" > "$target"
 fi
 
 format_lines() {
