@@ -71,6 +71,7 @@ Every entry must include the current branch:
 Keep entries concise and scannable:
 
 - Title: one line, ideally under 80 characters.
+- `时间`: exact local write time in `YYYY-MM-DD HH:mm` format.
 - `原因`, `修改`, `验证`, `风险`: 1-3 bullets each.
 - Each bullet: one concrete fact, ideally under 120 characters.
 - `影响文件`: list key files or directories only; avoid dumping a full diff.
@@ -79,6 +80,7 @@ Keep entries concise and scannable:
 ```md
 ## YYYY-MM-DD HH:mm - Short title
 
+时间：YYYY-MM-DD HH:mm
 类型：Bugfix / Feature / Refactor / Config / Style / Test / Docs / Investigation / OpenSpec / Cleanup
 项目：<project-name>
 分支：<branch-name 或 detached:<short-sha> 或 无 Git 仓库>

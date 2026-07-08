@@ -1,5 +1,6 @@
 ## YYYY-MM-DD HH:mm - 简短标题
 
+时间：YYYY-MM-DD HH:mm
 类型：Bugfix / Feature / Refactor / Config / Style / Test / Docs / Investigation / OpenSpec / Cleanup
 项目：<project-name>
 分支：<branch-name 或 detached:<short-sha> 或 无 Git 仓库>

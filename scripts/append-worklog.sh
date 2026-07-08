@@ -114,6 +114,7 @@ format_lines() {
 
 {
   printf '\n## %s - %s\n\n' "$timestamp" "$TITLE"
+  printf '时间：%s\n' "$timestamp"
   printf '类型：%s\n' "$TYPE"
   printf '项目：%s\n' "$PROJECT"
   printf '分支：%s\n' "$BRANCH"
